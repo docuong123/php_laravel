@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateKhachhangsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('khachhangs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('khachhang_ten',100);
+            $table->string('khachhang_email',200);
+            $table->string('khachhang_password',200);
+            $table->string('khachhang_sdt', 12);
+            $table->string('khachhang_diachi', 200);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('khachhangs');
+    }
+}
