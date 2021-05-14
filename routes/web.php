@@ -40,13 +40,6 @@ Route::post('/save-thongtinnhanhang','CheckOutController@save_thongtinnhanhang')
 Route::get('/payment','CheckOutController@payment');
 Route::post('/order-place','CheckoutController@order_place');
 
-
-
-
-
-
-
-
 /* backend */
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');
