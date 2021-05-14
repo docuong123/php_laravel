@@ -40,13 +40,6 @@ Route::post('/save-thongtinnhanhang','CheckOutController@save_thongtinnhanhang')
 Route::get('/payment','CheckOutController@payment');
 Route::post('/order-place','CheckoutController@order_place');
 
-
-
-
-
-
-
-
 /* backend */
 Route::get('/admin','AdminController@index');
 Route::get('/dashboard','AdminController@show_dashboard');
@@ -110,4 +103,11 @@ Route::get('/active-lohang/{lohang_id}','LohangController@active_lohang');
 /*Khach hang */ 
 Route::get('/all-khachhang','KhachHangController@all_khachhang');
 Route::get('delete-kh/{kh_id}','KhachHangController@delete_kh');
+
+/*Đơn hàng*/ 
+Route::get('/all-donhang','DonhangController@all_donhang');
+
+
+
+
 
