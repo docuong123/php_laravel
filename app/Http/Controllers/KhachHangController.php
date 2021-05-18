@@ -18,7 +18,7 @@ class KhachHangController extends Controller
     	$data = DB::table('khachhangs')->get();
     	return view('admin.khachhang.danhsach',compact('data'));
     }
-    public function delete($kh_id){
+    public function delete_kh($kh_id){
     	$khachhang = DB::table('khachhangs')->where('id',$kh_id)->delete();
     	return Redirect::to('/all-khachhang');
     }

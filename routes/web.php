@@ -106,6 +106,16 @@ Route::get('delete-kh/{kh_id}','KhachHangController@delete_kh');
 
 /*Đơn hàng*/ 
 Route::get('/all-donhang','DonhangController@all_donhang');
+Route::get('/get-editdonhang/{id}','DonhangController@get_editdonhang');
+Route::post('/post-editdonhang/{id}','DonhangController@post_editdonhang');
+
+Route::get('/get-editsuagiaohang/{id}','DonhangController@get_editsuagiaohang');
+Route::post('/post-editsuagiaohang/{id}','DonhangController@post_editsuagiaohang');
+
+Route::get('/get-editthanhtoan/{id}','DonhangController@get_editthanhtoan');
+Route::post('/post-editthanhtoan/{id}','DonhangController@post_editthanhtoan');
+
+Route::get('/xuat-hoadon/{id}','DonhangController@pdf');
 
 
 

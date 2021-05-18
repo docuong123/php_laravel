@@ -30,7 +30,7 @@ class CheckOutController extends Controller
     	Session::put('id',$customer_id);
     	Session::put('khachhang_ten',$request->customer_name);
 
-    	return Redirect::to('/login-checkout');
+    	return Redirect::to('/checkout');
 
         
     }

@@ -27,12 +27,16 @@ class LohangController extends Controller
     	$lohang = new Lohang();
     	$lohang->lohang_kyhieu =$request->txtLHSignt;
     	$lohang->lohang_soluongsp =$request->txtLHQuant;
+        $lohang->lohang_soluongdaban = 0;
+        $lohang->lohang_soluongdoitra= 0;
+        $lohang->lohang_soluonghientai = $request->txtLHQuant;
     	$lohang->lohang_hansudung=$request->txtLHShelf;
     	$lohang->lohang_giamuavao=$request->txtLHBuyPrice;
     	$lohang->lohang_giabanra=$request->txtLHSalePrice;
     	$lohang->lohang_tinhtrang=$request->lohang_status;
     	$lohang->sanpham_id=$request->txtLHProduct;
     	$lohang->nhacungcap_id=$request->txtLHVendor;
+
     	$lohang->save();
     	return Redirect::to('/all-lohang');
     }
@@ -50,6 +54,7 @@ class LohangController extends Controller
         $lohang['lohang_hansudung']=$request->txtLHShelf;
         $lohang['lohang_giamuavao']=$request->txtLHBuyPrice;
         $lohang['lohang_giabanra']=$request->txtLHSalePrice;
+        $lohang['lohang_soluonghientai']=$request->txtLHQuant - $lohang->lohang_soluongdaban + $lohang->lohang_soluongdoitra;
         $lohang['sanpham_id']=$request->txtLHProduct;
         $lohang['lohang_tinhtrang']=$request->lohang_status;
         $lohang['nhacungcap_id']=$request->txtLHVendor;

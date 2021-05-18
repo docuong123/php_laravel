@@ -43,13 +43,13 @@
                     </td>
                    
                     <td class="center">
-                    <a href="" 
+                    <a href="{{URL::to('/get-editsuagiaohang/'.$item->id)}}" 
                        type="button" class="btn btn-primary" 
                        data-toggle="tooltip" data-placement="left" 
                        title="Cập nhât Thông tin Giao hàng">
                         <i class="fa fa-crosshairs"></i>
                     </a>
-                    <a href="" 
+                    <a href="{{URL::to('/get-editthanhtoan/'.$item->id)}}" 
                        type="button" class="btn btn-danger" 
                        data-toggle="tooltip" data-placement="left" 
                        title="Cập nhât Thông tin Thanh toán">
@@ -61,7 +61,7 @@
                        title="Cập nhât Tình trạng đơn hàng">
                         <i class="fa fa-exchange"></i>
                     </a>
-                    <a href="" 
+                    <a href="{{URL::to('/xuat-hoadon')}}" 
                        type="button" class="btn btn-default" 
                        data-toggle="tooltip" data-placement="left" 
                        title="In hóa đơn">
