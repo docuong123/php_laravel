@@ -16,7 +16,7 @@ class HomeController extends Controller
     	$loaisp = DB::table('loaisanphams')->orderby('loaisanpham_ten')->get();
     	$sanpham = DB::table('sanphams')
     	->join('lohangs','sanphams.id','=','lohangs.sanpham_id')->where('lohang_tinhtrang','1')
-    	->orderby('sanphams.id','desc')->limit(12)->get();
+    	->orderby('lohangs.id','desc')->limit(12)->get();
 
     	$sanpham1 = DB::table('sanphams')
     	->join('lohangs','sanphams.id','=','lohangs.sanpham_id')->where('lohang_tinhtrang','1')

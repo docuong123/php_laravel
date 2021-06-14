@@ -86,34 +86,38 @@ class CheckOutController extends Controller
         $data['payment_status'] = 'Đang chờ xử lý';
         $payment_id = DB::table('opt_payments')->insertGetId($data);
 
-        $donhang = array();
-        $donhang['khachhang_id']=Session::get('id');
-        $donhang['thongtinnhanhang_id']=Session::get('id');
-        $donhang['donhang_tongtien']=$total;
-        $donhang['tinhtranghd_id']=1;
-        date_default_timezone_set('Asia/Ho_Chi_Minh');
-        $donhang['created_at']=now();
-        $donhang_id = DB::table('donhangs')->insertGetId($donhang);
 
-        foreach($content as $v_content){
-            $order_d_data['donhang_id'] = $donhang_id;
-            $order_d_data['sanpham_id'] = $v_content->id;
-            $order_d_data['gia_sp'] = $v_content->price;
-            $order_d_data['chitietdonhang_soluong'] = $v_content->qty;
-            $order_d_data['chitietdonhang_thanhtien']=$v_content->qty * $v_content->price;
+    // lưu đơn hàng
+    $donhang = array();
+    $donhang['khachhang_id']=Session::get('id');//lay duoc id khach hang de luu vao bang don hang
+    $donhang['thongtinnhanhang_id']=Session::get('id');
+    $donhang['tinhtranghd_id']=1;
+    $donhang['donhang_tongtien']=$total;
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $donhang['created_at']=now();
+    $donhang_id = DB::table('donhangs')->insertGetId($donhang);
+
+     foreach($content as $v_content){
+            $view_donhang['donhang_id'] = $donhang_id;
+            $view_donhang['sanpham_id'] = $v_content->id;
+            $viewdonhang['gia_sp'] = $v_content->price;
+            $view_donhang['chitietdonhang_thanhtien']=$v_content->qty * $v_content->price;
+            $view_donhang['chitietdonhang_soluong'] = $v_content->qty;
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $order_d_data['created_at']=now();
-            DB::table('chitietdonhangs')->insert($order_d_data);
-        }
-        if($data['payment_method']==1){
+            $view_donhang['created_at']=now();
+            DB::table('chitietdonhangs')->insert($view_donhang);
+        }if($data['payment_method']==1){
+
             Cart::destroy();
-            return view('fontend.checkout.handcash');
-        }elseif($data['payment_method']==2){ 
+            return view('pages.checkout.handcash');
+
+        }elseif($data['payment_method']==2){
             Cart::destroy();
-            return view('fontend.checkout.handcash');
+            return view('pages.checkout.handcash');
+
         }else{
             Cart::destroy();
-            return view('fontend.checkout.handcash');
+            return view('pages.checkout.handcash');
 
         }
 

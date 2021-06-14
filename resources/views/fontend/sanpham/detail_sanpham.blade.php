@@ -29,7 +29,7 @@
                   </div>
                   <div class="short-description">
                    
-                   <p><b>Tình trạng: </b>Còn {{$value->lohang_soluongsp}} sản phẩm</p>
+                   <p><b>Tình trạng: </b>Còn {{$value->lohang_soluonghientai}} sản phẩm</p>
                    <p><b>Điều kiện: </b>Mới 100%</p>
                    <p><b>Loại sản phẩm: </b>{{$value->loaisanpham_ten}}</p> </p>
                    
