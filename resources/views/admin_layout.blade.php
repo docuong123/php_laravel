@@ -129,10 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    
                 </li>
                 <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-book"></i>
-                        <span>Kho hàng</span>
-                    </a>
+                   <a href="{{URL::to('thong-ke')}}"><i class=" fa fa-book"></i>Kho hàng</a>
                    
                 </li>
             </ul>          

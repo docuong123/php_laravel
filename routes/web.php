@@ -116,6 +116,9 @@ Route::get('/get-editthanhtoan/{id}','DonhangController@get_editthanhtoan');
 Route::post('/post-editthanhtoan/{id}','DonhangController@post_editthanhtoan');
 
 Route::get('/xuat-hoadon/{id}','DonhangController@pdf');
+/* thong ke*/
+Route::get('/thong-ke','ThongnkeController@thongke');
+
 
 
 
